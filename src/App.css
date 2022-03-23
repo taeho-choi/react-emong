@@ -1,0 +1,31 @@
+/* init */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.Menu {
+  padding-top: 30px;
+  position: fixed;
+  right: 0px;
+  width: 300px;
+  border-left: 1px solid rgb(209, 209, 209);
+  height: 100%;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.Board {
+  margin-right: 300px;
+  text-align: center;
+  background-color: rgb(232, 240, 238);
+  height: 100vh;
+}

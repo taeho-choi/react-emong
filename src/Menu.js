@@ -1,7 +1,16 @@
 const Menu = () => {
   return (
     <aside className="Menu">
-      <img src="img/alien_emoji.png" alt="logo" width={50} height={50}></img>
+      <div className="login">
+        <img id="logo" src="img/alien_emoji.png" alt="logo"></img>
+        <button className="btn" id="btn1">
+          로그인
+        </button>
+        <button className="btn" id="btn2">
+          오티엘플래닛 회원가입
+        </button>
+        <p id="find_account">아이디/비밀번호 찾기</p>
+      </div>
     </aside>
   );
 };

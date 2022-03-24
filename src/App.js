@@ -1,15 +1,22 @@
+import React from "react";
+import { Route, Link } from "react-router-dom";
 import "./App.css";
-import Menu from "./Menu.js";
-import Board from "./Board.js";
-import { useState } from "react";
+import MainPage from "./pages/MainPage.js";
+import LoginPage from "./pages/LoginPage.js";
 
 function App() {
-  const [board, setBoard] = useState("main");
-
   return (
-    <div className="App">
-      <Menu />
-      <Board page={board} />
+    <div>
+      <ul>
+        <li>
+          <Link to="/">홈</Link>
+        </li>
+        <li>
+          <Link to="/login">로그인</Link>
+        </li>
+      </ul>
+      <Route exact path="/" component={MainPage} />
+      <Route exact path="/login" component={LoginPage} />
     </div>
   );
 }

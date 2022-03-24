@@ -1,7 +1,12 @@
 import React from "react";
+import SideMenu from "./SideMenu.js";
 
 const MainPage = () => {
-  return <div>메인페이지</div>;
+  return (
+    <>
+      <SideMenu />
+    </>
+  );
 };
 
 export default MainPage;

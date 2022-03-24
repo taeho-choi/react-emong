@@ -6,7 +6,7 @@ import LoginPage from "./pages/LoginPage.js";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <ul>
         <li>
           <Link to="/">홈</Link>

@@ -1,7 +1,14 @@
 import React from "react";
+import SideMenu from "./SideMenu.js";
 
 const LoginPage = () => {
-  return <div>로그인페이지</div>;
+  return (
+    <>
+      <div>
+        <SideMenu />
+      </div>
+    </>
+  );
 };
 
 export default LoginPage;

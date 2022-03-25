@@ -7,14 +7,6 @@ import LoginPage from "./pages/LoginPage.js";
 function App() {
   return (
     <div className="App">
-      <ul>
-        <li>
-          <Link to="/">홈</Link>
-        </li>
-        <li>
-          <Link to="/login">로그인</Link>
-        </li>
-      </ul>
       <Route exact path="/" component={MainPage} />
       <Route exact path="/login" component={LoginPage} />
     </div>

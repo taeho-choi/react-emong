@@ -4,7 +4,6 @@
   padding: 0px;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
-  /* font-weight: 100; */
   color: rgb(255, 255, 255);
 }
 ul,
@@ -19,19 +18,22 @@ a {
 .App {
   text-align: center;
   width: 100%;
-  height: 100vh;
-  background-color: rgb(53, 53, 53);
+  height: 100%;
+  background-color: rgb(39, 39, 39);
 }
 
+/* SideMenu */
 .SideMenu {
+  margin-top: 62px;
+  padding-top: 26px;
   left: 0px;
   width: 250px;
   height: 100vh;
   position: fixed;
   background-color: rgb(48, 48, 48);
-  padding-top: 30px;
   overflow: scroll;
   -ms-overflow-style: none;
+  /* border: solid 1px white; */
 }
 .SideMenu::-webkit-scrollbar {
   display: none;
@@ -49,13 +51,19 @@ a {
   display: block;
   border: 0px;
   cursor: pointer;
+  transition-duration: 100ms;
+}
+.SideMenu button:hover {
+  color: rgb(254, 254, 254);
+  background-color: rgb(63, 63, 63);
+  transition-duration: 100ms;
 }
 .SideMenu .on {
   color: rgb(254, 254, 254);
   background-color: rgb(63, 63, 63);
 }
 
-.Category {
+.category {
   font-size: 12px;
   color: rgb(134, 134, 134);
   text-align: left;
@@ -63,9 +71,74 @@ a {
   margin-top: 20px;
 }
 
-.EmptyBox {
+.copyright {
   padding-top: 80px;
   padding-bottom: 100px;
   font-size: 8px;
   color: rgb(134, 134, 134);
+}
+
+/* TopMenu */
+.TopMenu {
+  top: 0px;
+  width: 100vw;
+  height: 62px;
+  overflow: hidden;
+
+  position: fixed;
+  background-color: rgb(48, 48, 48);
+  padding-left: 19px;
+  padding-right: 19px;
+  box-sizing: border-box;
+}
+
+.TopMenu .logo {
+  width: 128px;
+  height: 34px;
+  margin-top: 24px;
+  font-size: 22px;
+  text-align: left;
+  cursor: pointer;
+  float: left;
+  font-weight: 500;
+}
+
+.TopMenu .loginBtn {
+  padding: 5px 16px 5px 16px;
+  margin-top: 16px;
+  margin-right: 30px;
+  color: rgb(7, 7, 7);
+  font-size: 14px;
+  float: right;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1.2px solid rgb(7, 7, 7);
+  font-weight: 600;
+  transition-duration: 200ms;
+}
+.TopMenu .loginBtn:hover {
+  color: white;
+  background-color: rgb(48, 48, 48);
+  border: 1.2px solid white;
+  transition-duration: 200ms;
+}
+/* .TopMenu .loginBtn: */
+
+.MainPage {
+  padding-top: calc(62px + 8px);
+  padding-left: calc(250px + 40px);
+  padding-bottom: 100px;
+  padding-right: 40px;
+}
+
+.MainPage h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.MainPage .line {
+  border-top: 1px solid rgb(48, 48, 48);
+  margin-top: 15px;
+  margin-bottom: 20px;
 }

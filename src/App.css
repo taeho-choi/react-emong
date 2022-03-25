@@ -4,7 +4,8 @@
   padding: 0px;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
-  color: rgb(255, 255, 255);
+  color: rgb(247, 247, 247);
+  background-color: rgb(39, 39, 39);
 }
 ul,
 ol,
@@ -28,15 +29,27 @@ a {
   padding-top: 26px;
   left: 0px;
   width: 250px;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   background-color: rgb(48, 48, 48);
   overflow: scroll;
-  -ms-overflow-style: none;
+  border-right: 1px solid rgb(55, 55, 55);
+  /* -ms-overflow-style: none; */
   /* border: solid 1px white; */
 }
 .SideMenu::-webkit-scrollbar {
-  display: none;
+  border-radius: 4px;
+  height: 88px;
+  width: 8px;
+}
+
+.SideMenu::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+}
+
+.SideMenu:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .SideMenu button {
@@ -69,12 +82,14 @@ a {
   text-align: left;
   margin-left: 29px;
   margin-top: 20px;
+  background-color: rgb(48, 48, 48);
 }
 
 .copyright {
-  padding-top: 80px;
-  padding-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 10px;
   font-size: 8px;
+  background-color: rgb(48, 48, 48);
   color: rgb(134, 134, 134);
 }
 
@@ -84,23 +99,24 @@ a {
   width: 100vw;
   height: 62px;
   overflow: hidden;
-
   position: fixed;
   background-color: rgb(48, 48, 48);
-  padding-left: 19px;
+  padding-left: 30px;
   padding-right: 19px;
   box-sizing: border-box;
+  border-bottom: 1px solid rgb(55, 55, 55);
 }
 
 .TopMenu .logo {
   width: 128px;
   height: 34px;
-  margin-top: 24px;
+  margin-top: 14px;
   font-size: 22px;
   text-align: left;
   cursor: pointer;
   float: left;
   font-weight: 500;
+  background-color: rgb(48, 48, 48);
 }
 
 .TopMenu .loginBtn {
@@ -114,31 +130,69 @@ a {
   cursor: pointer;
   border: 1.2px solid rgb(7, 7, 7);
   font-weight: 600;
+  background-color: rgb(255, 255, 255);
   transition-duration: 200ms;
 }
 .TopMenu .loginBtn:hover {
   color: white;
-  background-color: rgb(48, 48, 48);
+  background-color: rgba(0, 0, 0, 0);
   border: 1.2px solid white;
   transition-duration: 200ms;
 }
 /* .TopMenu .loginBtn: */
 
 .MainPage {
-  padding-top: calc(62px + 8px);
+  padding-top: calc(62px + 5vh);
   padding-left: calc(250px + 40px);
   padding-bottom: 100px;
   padding-right: 40px;
 }
 
 .MainPage h1 {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 1.5vw;
+  /* font-size: 48px; */
+  font-weight: 400;
   text-align: left;
+  text-align: center;
+}
+
+.MainPage h2 {
+  font-size: 3vw;
+  /* font-size: 100px; */
+  margin-top: 10vh;
+  margin-bottom: 7vh;
 }
 
 .MainPage .line {
   border-top: 1px solid rgb(48, 48, 48);
-  margin-top: 15px;
+  margin-top: 2vh;
   margin-bottom: 20px;
+}
+
+.MainPage button {
+  padding: 0.5vw 1.4vw 0.5vw 1.4vw;
+  margin-top: 7vh;
+  color: rgb(7, 7, 7);
+  font-size: 1vw;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1.2px solid rgb(7, 7, 7);
+  font-weight: 600;
+  background-color: rgb(255, 255, 255);
+  transition-duration: 200ms;
+}
+
+.MainPage button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1.2px solid white;
+  transition-duration: 200ms;
+}
+
+.MainPage h3 {
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-top: 0.6vw;
+  font-size: 0.6vw;
+  font-weight: normal;
 }

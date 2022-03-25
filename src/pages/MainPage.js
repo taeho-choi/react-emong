@@ -8,16 +8,14 @@ const MainPage = () => {
       <TopMenu />
       <SideMenu />
       <div className="MainPage">
-        <h1>홈</h1>
-        <p className="line"></p>
-        <img src="img/img1.jpg" alt="img"></img>{" "}
-        <img src="img/img1.jpg" alt="img"></img>{" "}
-        <img src="img/img1.jpg" alt="img"></img>{" "}
-        <img src="img/img1.jpg" alt="img"></img>{" "}
-        <img src="img/img1.jpg" alt="img"></img>{" "}
-        <img src="img/img1.jpg" alt="img"></img>{" "}
-        <img src="img/img1.jpg" alt="img"></img>{" "}
-        <img src="img/img1.jpg" alt="img"></img>
+        <div>
+          <h1>Welcome to EMONG!</h1>
+          <p className="line"></p>
+          <h2>😀😁😂🤣😎😍😪</h2>
+          <h1>익명의 친구들에게 감정을 공감 받으세요!</h1>
+          <button>로그인하고 시작하기</button>
+          <h3>※ 로그인하지 않아도 이모지 표현은 가능합니다.</h3>
+        </div>
       </div>
     </>
   );

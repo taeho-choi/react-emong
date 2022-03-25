@@ -2,12 +2,12 @@ import React from "react";
 import SideMenu from "./SideMenu.js";
 import TopMenu from "./TopMenu.js";
 
-const LoginPage = () => {
+const LoginPage = ({ activeMenu, setActiveMenu }) => {
   return (
     <>
       <div>
         <TopMenu />
-        <SideMenu />
+        <SideMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       </div>
     </>
   );

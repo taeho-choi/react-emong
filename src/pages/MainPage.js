@@ -2,11 +2,11 @@ import React from "react";
 import SideMenu from "./SideMenu.js";
 import TopMenu from "./TopMenu.js";
 
-const MainPage = () => {
+const MainPage = ({ activeMenu, setActiveMenu }) => {
   return (
     <>
       <TopMenu />
-      <SideMenu />
+      <SideMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="MainPage">
         <div>
           <h1>Welcome to EMONG!</h1>

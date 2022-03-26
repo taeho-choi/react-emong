@@ -4,17 +4,9 @@ const SideMenu = ({ activeMenu, setActiveMenu }) => {
   return (
     <div className="SideMenu">
       <Link to="/">
-        <button
-          className={activeMenu === "home" ? "on" : "off"}
-          onClick={() => setActiveMenu("home")}
-        >
-          🏠　홈
-        </button>
+        <button className={activeMenu === "home" ? "on" : "off"}>🏠　홈</button>
       </Link>
-      <button
-        className={activeMenu === "search" ? "on" : "off"}
-        onClick={() => setActiveMenu("search")}
-      >
+      <button className={activeMenu === "search" ? "on" : "off"}>
         🔍　검색하기
       </button>
       <button
@@ -24,20 +16,11 @@ const SideMenu = ({ activeMenu, setActiveMenu }) => {
         🏁　이용 안내
       </button>
       <div className="category">게시판</div>
-      <Link to="/login">
-        <button
-          className={activeMenu === "1" ? "on" : "off"}
-          onClick={() => setActiveMenu("1")}
-        >
-          🐵　원숭이 게시판
+      <Link to="/unclassified">
+        <button className={activeMenu === "Unclassified" ? "on" : "off"}>
+          📝　Unclassified
         </button>
       </Link>
-      <button
-        className={activeMenu === "2" ? "on" : "off"}
-        onClick={() => setActiveMenu("2")}
-      >
-        🐶　강아지 게시판
-      </button>
       <button
         className={activeMenu === "3" ? "on" : "off"}
         onClick={() => setActiveMenu("3")}
@@ -135,7 +118,7 @@ const SideMenu = ({ activeMenu, setActiveMenu }) => {
       >
         📧　문의하기
       </button>
-      <div className="copyright">© Animals. All Rights Reserved.</div>
+      <div className="copyright">© EMONG. All Rights Reserved.</div>
     </div>
   );
 };

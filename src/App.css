@@ -80,8 +80,9 @@ a {
   font-size: 12px;
   color: rgb(134, 134, 134);
   text-align: left;
-  margin-left: 29px;
+  margin-left: 26px;
   margin-top: 20px;
+  margin-bottom: 2px;
   background-color: rgb(48, 48, 48);
 }
 
@@ -142,28 +143,23 @@ a {
 /* .TopMenu .loginBtn: */
 
 .MainPage {
-  padding-top: calc(62px + 5vh);
-  padding-left: calc(250px + 40px);
-  padding-bottom: 100px;
-  padding-right: 40px;
 }
 
 .MainPage h1 {
   font-size: 1.5vw;
   /* font-size: 48px; */
   font-weight: 400;
-  text-align: left;
   text-align: center;
 }
 
 .MainPage h2 {
   font-size: 3vw;
   /* font-size: 100px; */
-  margin-top: 10vh;
+  margin-top: 18vh;
   margin-bottom: 7vh;
 }
 
-.MainPage .line {
+.line {
   border-top: 1px solid rgb(48, 48, 48);
   margin-top: 2vh;
   margin-bottom: 20px;
@@ -174,7 +170,7 @@ a {
   margin-top: 7vh;
   color: rgb(7, 7, 7);
   font-size: 1vw;
-  border-radius: 30px;
+  border-radius: 3vw;
   cursor: pointer;
   border: 1.2px solid rgb(7, 7, 7);
   font-weight: 600;
@@ -195,4 +191,91 @@ a {
   margin-top: 0.6vw;
   font-size: 0.6vw;
   font-weight: normal;
+}
+
+.content {
+  padding-top: calc(62px + 5vh);
+  padding-left: calc(250px + 40px);
+  padding-bottom: 100px;
+  padding-right: 40px;
+}
+
+.content .title {
+  font-size: 1.5vw;
+  font-weight: 400;
+  text-align: left;
+}
+
+.content textarea {
+  width: 100%;
+  height: 20vh;
+  resize: none;
+  border-radius: 10px;
+  font-size: 1vw;
+  padding: 0.7vw;
+  font-weight: 300;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid rgb(187, 187, 187);
+}
+
+.content textarea::-webkit-scrollbar {
+  transform-style: 2px;
+  border-radius: 4px;
+  height: 88px;
+  width: 8px;
+}
+
+.content textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+}
+
+.content textarea:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.submit {
+  float: right;
+  margin-right: 0px;
+  font-size: 1.1vw;
+  font-weight: 400;
+  padding: 0.5vw 1.4vw 0.5vw 1.4vw;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(0, 0, 0, 0);
+  border: 1px solid rgb(187, 187, 187);
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: white;
+  color: rgb(7, 7, 7);
+}
+
+.PostList {
+  margin-top: 5vw;
+}
+
+.PostItem {
+  box-sizing: border-box;
+  margin-top: 3vw;
+  text-align: left;
+
+  resize: none;
+  border-radius: 10px;
+  padding: 2vw;
+  font-weight: 300;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid rgb(66, 66, 66);
+}
+
+.PostItem * {
+  font-size: 1.2vw;
+}
+
+.PostItem .date {
+  float: right;
 }

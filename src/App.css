@@ -214,12 +214,12 @@ a {
   font-size: min(1.2vw, 14px);
   padding: 0.7vw;
   font-weight: 200;
-  outline: none;
+  outline-width: 1px;
   box-sizing: border-box;
   border: 1px solid rgb(187, 187, 187);
   background-color: rgb(48, 48, 48);
   letter-spacing: 0.4px;
-  line-height: 1.8vw;
+  line-height: 2.4vh;
   text-decoration: none;
 }
 
@@ -271,7 +271,7 @@ a {
 
 .PostItem {
   box-sizing: border-box;
-  margin-top: 3vw;
+  margin-top: 3.6vh;
   text-align: left;
   /* height: 20vh; */
   resize: none;
@@ -282,7 +282,7 @@ a {
   box-sizing: border-box;
   border: 1px solid rgb(66, 66, 66);
   letter-spacing: 0.4px;
-  line-height: 1.8vw;
+  line-height: max(2.4vh, 24px);
   word-break: break-all;
 }
 

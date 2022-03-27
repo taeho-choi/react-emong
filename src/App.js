@@ -28,10 +28,10 @@ function App() {
     setData([newItem, ...data]);
   };
 
-  const onEdit = (targetId, newContent) => {
+  const onEdit = (targetId, emo) => {
     setData(
       data.map((it) =>
-        it.id === targetId ? { ...it, content: newContent } : it
+        it.id === targetId ? { ...it, [emo]: it[emo] + 1 } : it
       )
     );
   };

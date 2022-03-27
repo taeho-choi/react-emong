@@ -13,7 +13,7 @@ const PostItem = ({
   angry,
   onEdit,
 }) => {
-  const increaseEmotion = () => {
+  const increaseEmotion = (emotion) => {
     const newItem = {
       input,
       id,
@@ -26,7 +26,8 @@ const PostItem = ({
       cry: 0,
       angry: 1,
     };
-    onEdit(id, newItem);
+    onEdit(id, emotion);
+    console.log(id);
   };
   return (
     <div className="PostItem">
@@ -37,13 +38,55 @@ const PostItem = ({
       <p className="line"></p>
       <div className="itemContent">{input}</div>
       <div className="emotion">
-        <button onClick={increaseEmotion}>🥰 {love}</button>
-        <button>😂 {funny}</button>
-        <button>😲 {surprise}</button>
-        <button>🥱 {sleepy}</button>
-        <button>😢 {sad}</button>
-        <button>😭 {cry}</button>
-        <button>🤬 {angry}</button>
+        <button
+          onClick={() => {
+            increaseEmotion("love");
+          }}
+        >
+          🥰 {love}
+        </button>
+        <button
+          onClick={() => {
+            increaseEmotion("love");
+          }}
+        >
+          😂 {funny}
+        </button>
+        <button
+          onClick={() => {
+            increaseEmotion("surprise");
+          }}
+        >
+          😲 {surprise}
+        </button>
+        <button
+          onClick={() => {
+            increaseEmotion("sleepy");
+          }}
+        >
+          🥱 {sleepy}
+        </button>
+        <button
+          onClick={() => {
+            increaseEmotion("sad");
+          }}
+        >
+          😢 {sad}
+        </button>
+        <button
+          onClick={() => {
+            increaseEmotion("cry");
+          }}
+        >
+          😭 {cry}
+        </button>
+        <button
+          onClick={() => {
+            increaseEmotion("angry");
+          }}
+        >
+          🤬 {angry}
+        </button>
       </div>
     </div>
   );

@@ -160,7 +160,7 @@ a {
 }
 
 .line {
-  border-top: 1px solid rgb(48, 48, 48);
+  border-top: 1px solid rgb(66, 66, 66);
   margin-top: 2vh;
   margin-bottom: 20px;
 }
@@ -208,15 +208,19 @@ a {
 
 .content textarea {
   width: 100%;
-  height: 10vh;
+  height: 13vh;
   resize: none;
   border-radius: 10px;
-  font-size: min(1vw, 14px);
+  font-size: min(1.2vw, 14px);
   padding: 0.7vw;
   font-weight: 200;
   outline: none;
   box-sizing: border-box;
   border: 1px solid rgb(187, 187, 187);
+  background-color: rgb(48, 48, 48);
+  letter-spacing: 0.4px;
+  line-height: 1.8vw;
+  text-decoration: none;
 }
 
 .content textarea::-webkit-scrollbar {
@@ -249,6 +253,13 @@ a {
   cursor: pointer;
 }
 
+.letters {
+  float: left;
+  font-size: min(14px, 1.1vw);
+  color: rgb(187, 187, 187);
+  padding: 0.5vw;
+}
+
 .submit:hover {
   background-color: white;
   color: rgb(7, 7, 7);
@@ -265,18 +276,46 @@ a {
   /* height: 20vh; */
   resize: none;
   border-radius: 10px;
-  padding: 2vw;
+  padding: 1.2vw;
   font-weight: 300;
   outline: none;
   box-sizing: border-box;
   border: 1px solid rgb(66, 66, 66);
-  /* overflow: scroll; */
+  letter-spacing: 0.4px;
+  line-height: 1.8vw;
+  word-break: break-all;
 }
 
 .PostItem * {
-  font-size: 1.2vw;
+  font-size: min(1.2vw, 14px);
+  color: rgb(218, 218, 218);
+}
+
+.PostItem .info {
+  font-weight: 600;
 }
 
 .PostItem .date {
   float: right;
+}
+
+.PostItem .emotion {
+  text-align: right;
+  margin-top: 1vw;
+}
+
+.PostItem .emotion button {
+  font-size: min(14px, 1.6vw);
+  padding: 0.2vw 0.6vw 0.2vw 0.6vw;
+  margin-left: 0.5vw;
+  border-radius: 10px;
+  border: 1px solid rgb(66, 66, 66);
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.PostItem .emotion button:hover {
+  background-color: white;
+  transition: 200ms;
+  color: rgb(7, 7, 7);
 }

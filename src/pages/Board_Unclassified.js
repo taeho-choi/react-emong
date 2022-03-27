@@ -17,7 +17,9 @@ const Board_Unclassified = ({
   const [state, setState] = useState("");
 
   const handleChangeState = (e) => {
-    setState(e.target.value);
+    const { value } = e.target;
+    setState(value.slice(0, 300));
+    console.log(value);
   };
 
   const handleSubmit = () => {
@@ -29,7 +31,6 @@ const Board_Unclassified = ({
 
     onCreate(state);
     setState("");
-    alert("저장 성공");
   };
 
   return (
@@ -38,14 +39,19 @@ const Board_Unclassified = ({
       <SideMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="content">
         <div className="Board_Unclassified">
-          <div className="title">미분류 게시판</div>
+          <div className="title">📝 미분류 게시판</div>
           <p className="line"></p>
-          <textarea ref={input} value={state} onChange={handleChangeState}>
-            asd
-          </textarea>
-          <button class="submit" onClick={handleSubmit}>
+          <textarea
+            ref={input}
+            value={state}
+            onChange={handleChangeState}
+            maxlength={300}
+            placeholder="내용을 10글자 이상으로 작성해주세요."
+          ></textarea>
+          <button className="submit" onClick={handleSubmit}>
             작성하기
           </button>
+          <div className="letters">{state.length} / 300 자</div>
           <PostList postList={postList} />
         </div>
       </div>

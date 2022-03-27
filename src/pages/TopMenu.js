@@ -6,7 +6,14 @@ const TopMenu = () => {
       <Link to="/">
         <div className="logo">🤐 EMONG</div>
       </Link>
-      <button className="loginBtn">로그인</button>
+      <button
+        className="loginBtn"
+        onClick={() => {
+          alert("현재는 로그인 없이 모든 서비스를 이용하실 수 있습니다.");
+        }}
+      >
+        로그인
+      </button>
     </div>
   );
 };

@@ -16,9 +16,24 @@ function App() {
       input,
       id: dataId.current,
       created_date,
+      love: 0,
+      funny: 0,
+      surprise: 0,
+      sleepy: 0,
+      sad: 0,
+      cry: 0,
+      angry: 0,
     };
     dataId.current += 1;
     setData([newItem, ...data]);
+  };
+
+  const onEdit = (targetId, newContent) => {
+    setData(
+      data.map((it) =>
+        it.id === targetId ? { ...it, content: newContent } : it
+      )
+    );
   };
 
   return (
@@ -46,6 +61,7 @@ function App() {
             setActiveMenu={setActiveMenu}
             onCreate={onCreate}
             postList={data}
+            onEdit={onEdit}
           />
         )}
       />

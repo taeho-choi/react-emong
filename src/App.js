@@ -3,7 +3,15 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import MainPage from "./pages/MainPage.js";
 import LoginPage from "./pages/LoginPage.js";
-import Board_Unclassified from "./pages/Board_Unclassified";
+import UnclassifiedBoard from "./pages/Board/UnclassifiedBoard.js";
+import LoveBoard from "./pages/Board/LoveBoard.js";
+import FunnyBoard from "./pages/Board/FunnyBoard.js";
+import SurpriseBoard from "./pages/Board/SurpriseBoard.js";
+import SleepyBoard from "./pages/Board/SleepyBoard.js";
+import SadBoard from "./pages/Board/SadBoard.js";
+import CryBoard from "./pages/Board/CryBoard.js";
+import AngryBoard from "./pages/Board/AngryBoard";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   const [data, setData] = useState([]);
@@ -54,12 +62,108 @@ function App() {
       />
       <Route
         exact
+        path="/search"
+        render={() => (
+          <SearchPage
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            postList={data}
+            onEdit={onEdit}
+          />
+        )}
+      />
+      <Route
+        exact
         path="/unclassified"
         render={() => (
-          <Board_Unclassified
+          <UnclassifiedBoard
             activeMenu={activeMenu}
             setActiveMenu={setActiveMenu}
             onCreate={onCreate}
+            postList={data}
+            onEdit={onEdit}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/love"
+        render={() => (
+          <LoveBoard
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            postList={data}
+            onEdit={onEdit}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/funny"
+        render={() => (
+          <FunnyBoard
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            postList={data}
+            onEdit={onEdit}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/surprise"
+        render={() => (
+          <SurpriseBoard
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            postList={data}
+            onEdit={onEdit}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sleepy"
+        render={() => (
+          <SleepyBoard
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            postList={data}
+            onEdit={onEdit}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sad"
+        render={() => (
+          <SadBoard
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            postList={data}
+            onEdit={onEdit}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/cry"
+        render={() => (
+          <CryBoard
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            postList={data}
+            onEdit={onEdit}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/angry"
+        render={() => (
+          <AngryBoard
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
             postList={data}
             onEdit={onEdit}
           />

@@ -14,20 +14,7 @@ const PostItem = ({
   onEdit,
 }) => {
   const increaseEmotion = (emotion) => {
-    const newItem = {
-      input,
-      id,
-      created_date,
-      love: 0,
-      funny: 0,
-      surprise: 0,
-      sleepy: 0,
-      sad: 0,
-      cry: 0,
-      angry: 1,
-    };
     onEdit(id, emotion);
-    console.log(id);
   };
   return (
     <div className="PostItem">
@@ -47,7 +34,7 @@ const PostItem = ({
         </button>
         <button
           onClick={() => {
-            increaseEmotion("love");
+            increaseEmotion("funny");
           }}
         >
           😂 {funny}

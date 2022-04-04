@@ -6,7 +6,7 @@ import PostList from "../PostList.js";
 const CryBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("cry");
-  });
+  }, []);
 
   return (
     <>

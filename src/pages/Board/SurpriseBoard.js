@@ -6,7 +6,7 @@ import PostList from "../PostList.js";
 const SurpriseBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("surprise");
-  });
+  }, []);
 
   return (
     <>

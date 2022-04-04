@@ -6,7 +6,7 @@ import PostList from "../PostList.js";
 const LoveBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("love");
-  });
+  }, []);
 
   return (
     <>

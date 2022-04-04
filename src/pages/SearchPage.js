@@ -1,12 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import SideMenu from "../pages/SideMenu";
 import TopMenu from "../pages/TopMenu.js";
-import PostList from "../pages/PostList.js";
+import SearchPostList from "../pages/SearchPostList.js";
 
 const SearchPage = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("search");
-  });
+  }, []);
+
+  const textBox = useRef();
+  const [searchText, setSearchText] = useState(null);
+
+  const onSearch = () => {
+    setSearchText(textBox.current.value);
+    console.log(textBox.current.value);
+  };
 
   return (
     <>
@@ -15,13 +23,19 @@ const SearchPage = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
       <div className="content">
         <div className="SearchPage">
           <div className="searchBox">
-            <input placeholder="검색할 내용을 입력하세요." />
-            <div className="searchBtn">🔍</div>
+            <input
+              type="text"
+              placeholder="검색할 내용을 입력하세요."
+              ref={textBox}
+            />
+            <button className="searchBtn" onClick={onSearch}>
+              🔍
+            </button>
           </div>
-          <PostList
+          <SearchPostList
             postList={postList}
             onEdit={onEdit}
-            classifyFlag={"angry"}
+            searchText={searchText}
           />
         </div>
       </div>

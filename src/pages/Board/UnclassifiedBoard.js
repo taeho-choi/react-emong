@@ -12,7 +12,7 @@ const UnclassifiedBoard = ({
 }) => {
   useEffect(() => {
     setActiveMenu("Unclassified");
-  });
+  }, []);
 
   const input = useRef();
   const [state, setState] = useState("");

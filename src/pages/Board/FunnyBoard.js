@@ -6,7 +6,7 @@ import PostList from "../PostList.js";
 const FunnyBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("funny");
-  });
+  }, []);
 
   return (
     <>

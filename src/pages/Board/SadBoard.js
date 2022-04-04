@@ -6,7 +6,7 @@ import PostList from "../PostList.js";
 const SadBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("sad");
-  });
+  }, []);
 
   return (
     <>

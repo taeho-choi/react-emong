@@ -96,6 +96,7 @@ a {
 
 /* TopMenu */
 .TopMenu {
+  z-index: 1;
   top: 0px;
   width: 100vw;
   height: 62px;
@@ -339,7 +340,7 @@ a {
 }
 
 .searchBox input {
-  width: 4 0%;
+  width: 40%;
   margin-left: 0px;
   border-radius: 10px;
   font-size: min(1.2vw, 14px);
@@ -357,7 +358,33 @@ a {
 
 .searchBtn {
   cursor: pointer;
-  position: absolute;
-  left: 180px;
-  top: 4px;
+  position: relative;
+  left: -30px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: max(1.4vw, 14px);
+}
+
+.PostList .resultInfo {
+  font-size: 0.9vw;
+  text-align: left;
+  color: rgb(163, 163, 163);
+}
+
+.PostList .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.PostList .container button {
+  flex: 1 1 20%;
+  height: 10vw;
+  font-size: min(1.2vw, 14px);
+  margin: 5vw 3vw 0px 3vw;
+}
+
+.PostList .boardInfo {
+  font-size: 1.5vw;
+  text-align: center;
+  color: rgb(247, 247, 247);
 }

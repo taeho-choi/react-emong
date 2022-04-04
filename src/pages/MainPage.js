@@ -5,7 +5,7 @@ import TopMenu from "./TopMenu.js";
 const MainPage = ({ activeMenu, setActiveMenu }) => {
   useEffect(() => {
     setActiveMenu("home");
-  });
+  }, []);
 
   return (
     <>

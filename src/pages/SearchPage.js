@@ -16,6 +16,12 @@ const SearchPage = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
     console.log(textBox.current.value);
   };
 
+  const onPressEnter = (e) => {
+    if (e.key == "Enter") {
+      onSearch();
+    }
+  };
+
   return (
     <>
       <TopMenu />
@@ -27,6 +33,7 @@ const SearchPage = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
               type="text"
               placeholder="검색할 내용을 입력하세요."
               ref={textBox}
+              onKeyDown={onPressEnter}
             />
             <button className="searchBtn" onClick={onSearch}>
               🔍

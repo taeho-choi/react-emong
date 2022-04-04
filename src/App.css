@@ -374,17 +374,39 @@ a {
 .PostList .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .PostList .container button {
   flex: 1 1 20%;
   height: 10vw;
+  width: 20vw;
   font-size: min(1.2vw, 14px);
-  margin: 5vw 3vw 0px 3vw;
+  border-radius: 1.5vw;
+  border: 5px solid transparent;
+  background-image: linear-gradient(#2e2e2e, #2e2e2e),
+    linear-gradient(to right, #ffc83d50, #f03a1750);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin-bottom: 2vw;
+  cursor: pointer;
+}
+
+.PostList .container button:hover {
+  background-image: linear-gradient(#2e2e2e, #2e2e2e),
+    linear-gradient(to right, #ffc83d99, #f03a1799);
+}
+
+.PostList .container button a {
+  display: inline-block;
+  margin-bottom: 0.4vw;
+  font-size: min(2.4vw, 28px);
+  background-color: #2e2e2e;
 }
 
 .PostList .boardInfo {
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   text-align: center;
   color: rgb(247, 247, 247);
+  margin-bottom: 2vw;
 }

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import SideMenu from "../SideMenu.js";
-import TopMenu from "../TopMenu.js";
 import PostList from "../PostList.js";
 
 const LoveBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
@@ -10,7 +9,6 @@ const LoveBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
 
   return (
     <>
-      <TopMenu />
       <SideMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="content">
         <div className="LoveBoard">

@@ -410,3 +410,167 @@ a {
   color: rgb(247, 247, 247);
   margin-bottom: 2vw;
 }
+
+.LoginPage {
+}
+
+.LoginPage .box {
+  background-color: rgb(48, 48, 48);
+  border: 1px solid rgb(55, 55, 55);
+  width: 26vw;
+  margin: 10vh auto;
+}
+
+.LoginPage .logo {
+  font-weight: 500;
+  cursor: pointer;
+  font-size: max(16px, 1.9vw);
+  margin: 2vw auto 3vw auto;
+  background-color: rgb(48, 48, 48);
+}
+
+.LoginPage .box input {
+  width: 20vw;
+  height: 2.5vw;
+  margin: auto;
+  border-radius: 10px;
+  font-size: min(1.2vw, 14px);
+  font-weight: 200;
+  outline-width: 1px;
+  border: 1px solid rgb(187, 187, 187);
+  background-color: rgb(48, 48, 48);
+  letter-spacing: 0.4px;
+  line-height: 2.4vh;
+  text-decoration: none;
+  margin-bottom: 2vh;
+  box-sizing: border-box;
+  padding: 0px 2vh 0px 2vh;
+  display: block;
+}
+
+.LoginPage .box .loginBtn {
+  width: 20vw;
+  height: 2.5vw;
+  margin: auto;
+  border-radius: 10px;
+  font-size: min(1.2vw, 14px);
+  font-weight: 500;
+  outline-width: 1px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  letter-spacing: 0.4px;
+  line-height: 2.4vh;
+  margin-bottom: 1vh;
+  margin-top: 0px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: rgb(7, 7, 7);
+  display: block;
+}
+
+.LoginPage .box .findAccount {
+  font-size: min(0.8vw, 12px);
+  font-weight: 400;
+  display: block;
+  text-align: right;
+  margin-right: 3.1vw;
+  background-color: rgb(48, 48, 48);
+  cursor: pointer;
+  color: rgb(187, 187, 187);
+}
+
+.LoginPage .box .signUp {
+  font-size: min(1.2vw, 14px);
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  background-color: rgb(48, 48, 48);
+  color: rgb(187, 187, 187);
+}
+
+.LoginPage .box .signUp a {
+  background-color: rgb(48, 48, 48);
+  font-size: min(1.2vw, 14px);
+  color: #ffc83d;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 0.3vw;
+}
+
+.SignUpPage .box {
+  background-color: rgb(48, 48, 48);
+  border: 1px solid rgb(55, 55, 55);
+  width: 45vw;
+  margin: 10vh auto;
+}
+
+.SignUpPage .box .title {
+  font-weight: 400;
+  cursor: pointer;
+  font-size: max(14px, 1.6vw);
+  text-align: left;
+  margin: 4vw 0px 0px 10.5vw;
+  background-color: rgb(48, 48, 48);
+}
+
+.SignUpPage .box .subTitle {
+  font-size: min(0.8vw, 12px);
+  font-weight: 400;
+  display: block;
+  text-align: left;
+  margin-left: 10.5vw;
+  background-color: rgb(48, 48, 48);
+  cursor: pointer;
+  color: rgb(187, 187, 187);
+  margin-bottom: 2vw;
+}
+
+.SignUpPage .box .info {
+  font-size: min(0.8vw, 12px);
+  font-weight: 400;
+  display: block;
+  text-align: left;
+  margin-left: 10.5vw;
+  background-color: rgb(48, 48, 48);
+  cursor: pointer;
+  color: white;
+  margin-bottom: 0.4vw;
+}
+
+.SignUpPage .box .signUpBtn {
+  width: 25vw;
+  height: 2.5vw;
+  margin: auto;
+  border-radius: 10px;
+  font-size: min(1.2vw, 14px);
+  font-weight: 500;
+  outline-width: 1px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  letter-spacing: 0.4px;
+  line-height: 2.4vh;
+  margin-bottom: 4vw;
+  margin-top: 2.4vw;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: rgb(7, 7, 7);
+  display: block;
+}
+
+.SignUpPage .box input {
+  width: 25vw;
+  height: 2.5vw;
+  margin: auto;
+  border-radius: 10px;
+  font-size: min(1.2vw, 14px);
+  font-weight: 200;
+  outline-width: 1px;
+  border: 1px solid rgb(187, 187, 187);
+  background-color: rgb(48, 48, 48);
+  letter-spacing: 0.4px;
+  line-height: 2.4vh;
+  text-decoration: none;
+  margin-bottom: 2vh;
+  box-sizing: border-box;
+  padding: 0px 2vh 0px 2vh;
+  display: block;
+}

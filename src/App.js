@@ -12,12 +12,26 @@ import SadBoard from "./pages/Board/SadBoard.js";
 import CryBoard from "./pages/Board/CryBoard.js";
 import AngryBoard from "./pages/Board/AngryBoard";
 import SearchPage from "./pages/SearchPage";
+import SignUpPage from "./pages/SignUpPage";
+import TopMenu from "./pages/TopMenu";
+import app from "./firebase.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 
 function App() {
   const [data, setData] = useState([]);
   const [activeMenu, setActiveMenu] = useState("home");
   const dataId = useRef(0);
 
+  // firebase
+  const [isLoggedin, setIsLoggedIn] = useState(false);
+  const auth = getAuth();
+
+  // post
   const onCreate = (input) => {
     const created_date = new Date().getTime();
     const newItem = {
@@ -50,123 +64,148 @@ function App() {
         exact
         path="/"
         render={() => (
-          <MainPage activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+          <>
+            <TopMenu />
+            <MainPage activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+          </>
         )}
       />
-      <Route
-        exact
-        path="/login"
-        render={() => (
-          <LoginPage activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
-        )}
-      />
+      <Route exact path="/login" render={() => <LoginPage />} />
+      <Route exact path="/register" render={() => <SignUpPage />} />
       <Route
         exact
         path="/search"
         render={() => (
-          <SearchPage
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <SearchPage
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
       <Route
         exact
         path="/unclassified"
         render={() => (
-          <UnclassifiedBoard
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            onCreate={onCreate}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <UnclassifiedBoard
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              onCreate={onCreate}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
       <Route
         exact
         path="/love"
         render={() => (
-          <LoveBoard
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <LoveBoard
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
       <Route
         exact
         path="/funny"
         render={() => (
-          <FunnyBoard
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <FunnyBoard
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
       <Route
         exact
         path="/surprise"
         render={() => (
-          <SurpriseBoard
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <SurpriseBoard
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
       <Route
         exact
         path="/sleepy"
         render={() => (
-          <SleepyBoard
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <SleepyBoard
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
       <Route
         exact
         path="/sad"
         render={() => (
-          <SadBoard
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <SadBoard
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
       <Route
         exact
         path="/cry"
         render={() => (
-          <CryBoard
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <CryBoard
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
       <Route
         exact
         path="/angry"
         render={() => (
-          <AngryBoard
-            activeMenu={activeMenu}
-            setActiveMenu={setActiveMenu}
-            postList={data}
-            onEdit={onEdit}
-          />
+          <>
+            <TopMenu />
+            <AngryBoard
+              activeMenu={activeMenu}
+              setActiveMenu={setActiveMenu}
+              postList={data}
+              onEdit={onEdit}
+            />
+          </>
         )}
       />
     </div>

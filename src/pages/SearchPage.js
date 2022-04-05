@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import SideMenu from "../pages/SideMenu";
-import TopMenu from "../pages/TopMenu.js";
 import SearchPostList from "../pages/SearchPostList.js";
 
 const SearchPage = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
@@ -24,7 +23,6 @@ const SearchPage = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
 
   return (
     <>
-      <TopMenu />
       <SideMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="content">
         <div className="SearchPage">
@@ -33,7 +31,7 @@ const SearchPage = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
               type="text"
               placeholder="검색할 내용을 입력하세요."
               ref={textBox}
-              onKeyDown={onPressEnter}
+              onKeyPress={onPressEnter}
             />
             <button className="searchBtn" onClick={onSearch}>
               🔍

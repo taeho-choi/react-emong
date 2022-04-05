@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import SideMenu from "../SideMenu.js";
-import TopMenu from "../TopMenu.js";
 import PostList from "../PostList.js";
 
 const UnclassifiedBoard = ({
@@ -35,7 +34,6 @@ const UnclassifiedBoard = ({
 
   return (
     <>
-      <TopMenu />
       <SideMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       <div className="content">
         <div className="UnclassifiedBoard">

@@ -28,7 +28,7 @@ function App() {
   const dataId = useRef(0);
 
   // firebase
-  const [isLoggedin, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const auth = getAuth();
 
   // post
@@ -65,7 +65,7 @@ function App() {
         path="/"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <MainPage activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
           </>
         )}

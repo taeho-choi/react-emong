@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -10,23 +10,22 @@ const LoginPage = () => {
   const idRef = useRef();
   const pwRef = useRef();
 
-  onAuthStateChanged(getAuth(), (user) => {
-    console.log(user);
-  });
+  const history = useHistory();
 
-  const onSignUp = async () => {
+  const onSignIn = async () => {
     const auth = getAuth();
     const result = await signInWithEmailAndPassword(
       auth,
       idRef.current.value,
       pwRef.current.value
     );
-    console.log(result);
+
+    history.replace("/");
   };
 
   const onPressEnter = (e) => {
     if (e.key == "Enter") {
-      onSignUp();
+      onSignIn();
     }
   };
 
@@ -47,7 +46,7 @@ const LoginPage = () => {
           ref={pwRef}
           onKeyPress={onPressEnter}
         ></input>
-        <button className="loginBtn" onClick={onSignUp}>
+        <button className="loginBtn" onClick={onSignIn}>
           로그인
         </button>
         <a className="findAccount">아이디/비밀번호 찾기</a>

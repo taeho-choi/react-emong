@@ -12,7 +12,7 @@ const SignUpPage = () => {
       idRef.current.value,
       pwRef.current.value
     );
-    console.log(result);
+    // console.log(result);
   };
 
   const onPressEnter = (e) => {

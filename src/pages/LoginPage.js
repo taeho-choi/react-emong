@@ -14,13 +14,19 @@ const LoginPage = () => {
 
   const onSignIn = async () => {
     const auth = getAuth();
-    const result = await signInWithEmailAndPassword(
-      auth,
-      idRef.current.value,
-      pwRef.current.value
-    );
 
-    history.replace("/");
+    signInWithEmailAndPassword(auth, idRef.current.value, pwRef.current.value)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+        history.replace("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+      });
   };
 
   const onPressEnter = (e) => {

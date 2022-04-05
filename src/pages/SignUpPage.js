@@ -1,23 +1,25 @@
 import React, { useRef } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useHistory } from "react-router-dom";
 
 const SignUpPage = () => {
+  const history = useHistory();
   const idRef = useRef();
   const pwRef = useRef();
 
-  const onLogin = async () => {
+  const onSignUp = () => {
     const auth = getAuth();
-    const result = await createUserWithEmailAndPassword(
+    createUserWithEmailAndPassword(
       auth,
       idRef.current.value,
       pwRef.current.value
     );
-    // console.log(result);
+    history.replace("/");
   };
 
   const onPressEnter = (e) => {
     if (e.key == "Enter") {
-      onLogin();
+      onSignUp();
     }
   };
 
@@ -43,7 +45,7 @@ const SignUpPage = () => {
           ref={pwRef}
           onKeyPress={onPressEnter}
         ></input>
-        <button className="signUpBtn" onClick={onLogin}>
+        <button className="signUpBtn" onClick={onSignUp}>
           회원가입
         </button>
       </div>

@@ -498,7 +498,7 @@ a {
 .SignUpPage .box {
   background-color: rgb(48, 48, 48);
   border: 1px solid rgb(55, 55, 55);
-  width: 45vw;
+  width: 35vw;
   margin: 10vh auto;
 }
 
@@ -507,7 +507,7 @@ a {
   cursor: pointer;
   font-size: max(14px, 1.6vw);
   text-align: left;
-  margin: 4vw 0px 0px 10.5vw;
+  margin: 3vw 0px 0px 5.5vw;
   background-color: rgb(48, 48, 48);
 }
 
@@ -516,7 +516,7 @@ a {
   font-weight: 400;
   display: block;
   text-align: left;
-  margin-left: 10.5vw;
+  margin-left: 5.5vw;
   background-color: rgb(48, 48, 48);
   cursor: pointer;
   color: rgb(187, 187, 187);
@@ -528,7 +528,7 @@ a {
   font-weight: 400;
   display: block;
   text-align: left;
-  margin-left: 10.5vw;
+  margin-left: 5.5vw;
   background-color: rgb(48, 48, 48);
   cursor: pointer;
   color: white;

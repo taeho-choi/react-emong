@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
 import MainPage from "./pages/MainPage.js";
@@ -22,21 +22,37 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 
 function App() {
+  useEffect(() => {
+    getData();
+  }, []);
+
   const [data, setData] = useState([]);
   const [activeMenu, setActiveMenu] = useState("home");
   const dataId = useRef(0);
 
   // firebase
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const auth = getAuth();
 
   // firestore
+  const getData = async () => {
+    //   const querySnapshot = await getDocs(collection(db, "board"));
+    //   querySnapshot.forEach((doc) => {
+    //     console.log(doc.data());
+    //     setData([...data, doc.data()]);
+    //     console.log(querySnapshot);
+    //   });
+
+    const docRef = collection(db, "board");
+    // const docSnap = await getDoc(docRef);
+
+    console.log(docRef.data());
+  };
 
   // post
-  const onCreate = async (input) => {
+  const onCreate = (input) => {
     const created_date = new Date().getTime();
     const newItem = {
       input,
@@ -52,11 +68,6 @@ function App() {
     };
     dataId.current += 1;
     setData([newItem, ...data]);
-
-    const querySnapshot = await getDocs(collection(db, "board"));
-    querySnapshot.forEach((doc) => {
-      console.log(doc.data());
-    });
   };
 
   const onEdit = (targetId, emo) => {

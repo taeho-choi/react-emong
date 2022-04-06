@@ -8,13 +8,35 @@ const SignUpPage = () => {
   const pwRef = useRef();
 
   const onSignUp = () => {
+    if (idRef.current.value === "") {
+      alert("아이디를 입력하세요.");
+      return;
+    }
+
+    if (pwRef.current.value === "") {
+      alert("비밀번호를 입력하세요.");
+      return;
+    }
     const auth = getAuth();
     createUserWithEmailAndPassword(
       auth,
       idRef.current.value,
       pwRef.current.value
-    );
-    history.replace("/");
+    )
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+        history.replace("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        if (error.code === "auth/invalid-email") {
+          alert("유효하지 않은 이메일입니다.");
+        }
+      });
   };
 
   const onPressEnter = (e) => {

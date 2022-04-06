@@ -13,6 +13,16 @@ const LoginPage = () => {
   const history = useHistory();
 
   const onSignIn = async () => {
+    if (idRef.current.value === "") {
+      alert("아이디를 입력하세요.");
+      return;
+    }
+
+    if (pwRef.current.value === "") {
+      alert("비밀번호를 입력하세요.");
+      return;
+    }
+
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, idRef.current.value, pwRef.current.value)

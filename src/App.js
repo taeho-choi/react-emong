@@ -15,12 +15,14 @@ import SearchPage from "./pages/SearchPage";
 import SignUpPage from "./pages/SignUpPage";
 import TopMenu from "./pages/TopMenu";
 import app from "./firebase.js";
+import db from "./firestore.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 function App() {
   const [data, setData] = useState([]);
@@ -31,8 +33,10 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const auth = getAuth();
 
+  // firestore
+
   // post
-  const onCreate = (input) => {
+  const onCreate = async (input) => {
     const created_date = new Date().getTime();
     const newItem = {
       input,
@@ -48,6 +52,11 @@ function App() {
     };
     dataId.current += 1;
     setData([newItem, ...data]);
+
+    const querySnapshot = await getDocs(collection(db, "board"));
+    querySnapshot.forEach((doc) => {
+      console.log(doc.data());
+    });
   };
 
   const onEdit = (targetId, emo) => {

@@ -22,11 +22,21 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  orderBy,
+  query,
+} from "firebase/firestore";
 
 function App() {
   useEffect(() => {
-    getData();
+    initData();
   }, []);
 
   const [data, setData] = useState([]);
@@ -37,22 +47,28 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // firestore
-  const getData = async () => {
-    //   const querySnapshot = await getDocs(collection(db, "board"));
-    //   querySnapshot.forEach((doc) => {
-    //     console.log(doc.data());
-    //     setData([...data, doc.data()]);
-    //     console.log(querySnapshot);
-    //   });
+  const initData = async () => {
+    const querySnapshot = await getDocs(collection(db, "board"));
+    const articleSnapshot = await getDocs(
+      query(collection(db, "board"), orderBy("created_date"))
+    );
 
-    const docRef = collection(db, "board");
-    // const docSnap = await getDoc(docRef);
+    dataId.current = 0;
+    articleSnapshot.forEach((doc) => {
+      setData((prevData) => [doc.data(), ...prevData]);
+      dataId.current += 1;
+    });
 
-    console.log(docRef.data());
+    // const docRef = collection(db, "board");
+    // // const docSnap = await getDoc(docRef);
+
+    // console.log(docRef);
   };
 
   // post
-  const onCreate = (input) => {
+
+  // Local onCreate
+  const prevOnCreate = (input) => {
     const created_date = new Date().getTime();
     const newItem = {
       input,
@@ -67,15 +83,45 @@ function App() {
       angry: 0,
     };
     dataId.current += 1;
+
     setData([newItem, ...data]);
   };
 
-  const onEdit = (targetId, emo) => {
-    setData(
-      data.map((it) =>
-        it.id === targetId ? { ...it, [emo]: it[emo] + 1 } : it
-      )
-    );
+  // Firestore onCreate
+  const onCreate = async (input) => {
+    const created_date = new Date().getTime();
+    const newItem = {
+      input,
+      id: dataId.current,
+      created_date,
+      love: 0,
+      funny: 0,
+      surprise: 0,
+      sleepy: 0,
+      sad: 0,
+      cry: 0,
+      angry: 0,
+    };
+    dataId.current += 1;
+    console.log(`onCreate :: ${dataId.current}`);
+
+    await setDoc(doc(db, "board", dataId.current.toString()), newItem);
+    setData([]);
+    initData();
+  };
+
+  // Firestore onEdit
+  const onEdit = async (targetId, emo) => {
+    const targetRef = doc(db, "board", (targetId + 1).toString());
+    await updateDoc(targetRef, {
+      [emo]: (await getDoc(targetRef)).data()[emo] + 1,
+    }).then(() => {
+      setData(
+        data.map((it) =>
+          it.id === targetId ? { ...it, [emo]: it[emo] + 1 } : it
+        )
+      );
+    });
   };
 
   return (
@@ -97,7 +143,7 @@ function App() {
         path="/search"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <SearchPage
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}
@@ -112,7 +158,7 @@ function App() {
         path="/unclassified"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <UnclassifiedBoard
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}
@@ -128,7 +174,7 @@ function App() {
         path="/love"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <LoveBoard
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}
@@ -143,7 +189,7 @@ function App() {
         path="/funny"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <FunnyBoard
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}
@@ -158,7 +204,7 @@ function App() {
         path="/surprise"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <SurpriseBoard
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}
@@ -173,7 +219,7 @@ function App() {
         path="/sleepy"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <SleepyBoard
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}
@@ -188,7 +234,7 @@ function App() {
         path="/sad"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <SadBoard
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}
@@ -203,7 +249,7 @@ function App() {
         path="/cry"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <CryBoard
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}
@@ -218,7 +264,7 @@ function App() {
         path="/angry"
         render={() => (
           <>
-            <TopMenu />
+            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <AngryBoard
               activeMenu={activeMenu}
               setActiveMenu={setActiveMenu}

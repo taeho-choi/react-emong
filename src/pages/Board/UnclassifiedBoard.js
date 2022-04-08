@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import SideMenu from "../SideMenu.js";
 import PostList from "../PostList.js";
+import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
+import db from "../../firestore.js";
 
 const UnclassifiedBoard = ({
   activeMenu,

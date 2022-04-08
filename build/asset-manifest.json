@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-emong/static/css/main.b449e70c.css",
+    "main.js": "/react-emong/static/js/main.39b04103.js",
+    "index.html": "/react-emong/index.html",
+    "main.b449e70c.css.map": "/react-emong/static/css/main.b449e70c.css.map",
+    "main.39b04103.js.map": "/react-emong/static/js/main.39b04103.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b449e70c.css",
+    "static/js/main.39b04103.js"
+  ]
+}

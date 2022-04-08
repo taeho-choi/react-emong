@@ -33,6 +33,7 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -126,154 +127,156 @@ function App() {
 
   return (
     <div className="App">
-      <Route
-        exact
-        path="/"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <MainPage activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
-          </>
-        )}
-      />
-      <Route exact path="/login" render={() => <LoginPage />} />
-      <Route exact path="/register" render={() => <SignUpPage />} />
-      <Route
-        exact
-        path="/search"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <SearchPage
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/unclassified"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <UnclassifiedBoard
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              onCreate={onCreate}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/love"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <LoveBoard
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/funny"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <FunnyBoard
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/surprise"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <SurpriseBoard
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/sleepy"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <SleepyBoard
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/sad"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <SadBoard
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/cry"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <CryBoard
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/angry"
-        render={() => (
-          <>
-            <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <AngryBoard
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenu}
-              postList={data}
-              onEdit={onEdit}
-            />
-          </>
-        )}
-      />
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <MainPage activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+            </>
+          )}
+        />
+        <Route exact path="/login" render={() => <LoginPage />} />
+        <Route exact path="/register" render={() => <SignUpPage />} />
+        <Route
+          exact
+          path="/search"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <SearchPage
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/unclassified"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <UnclassifiedBoard
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                onCreate={onCreate}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/love"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <LoveBoard
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/funny"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <FunnyBoard
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/surprise"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <SurpriseBoard
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/sleepy"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <SleepyBoard
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/sad"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <SadBoard
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/cry"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <CryBoard
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/angry"
+          render={() => (
+            <>
+              <TopMenu isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <AngryBoard
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
+                postList={data}
+                onEdit={onEdit}
+              />
+            </>
+          )}
+        />
+      </BrowserRouter>
     </div>
   );
 }

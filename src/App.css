@@ -37,6 +37,12 @@ a {
   /* -ms-overflow-style: none; */
   /* border: solid 1px white; */
 }
+@media screen and (max-width: 768px) {
+  .SideMenu {
+    display: none;
+  }
+}
+
 .SideMenu::-webkit-scrollbar {
   border-radius: 4px;
   height: 88px;
@@ -100,11 +106,8 @@ a {
   top: 0px;
   width: 100vw;
   height: 62px;
-  overflow: hidden;
   position: fixed;
   background-color: rgb(48, 48, 48);
-  padding-left: 30px;
-  padding-right: 19px;
   box-sizing: border-box;
   border-bottom: 1px solid rgb(55, 55, 55);
 }
@@ -113,6 +116,8 @@ a {
   width: 128px;
   height: 34px;
   margin-top: 14px;
+  margin-left: 30px;
+  margin-bottom: 13px;
   font-size: 22px;
   text-align: left;
   cursor: pointer;
@@ -135,6 +140,30 @@ a {
   background-color: rgb(255, 255, 255);
   transition-duration: 200ms;
 }
+.TopMenu .hamburgerBtn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .TopMenu .loginBtn {
+    /* visibility: hidden; */
+    display: none;
+  }
+  .TopMenu .hamburgerBtn {
+    margin-top: 5px;
+    color: white;
+    font-size: 32px;
+    float: right;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    background-color: transparent;
+    transition-duration: 200ms;
+    display: block;
+    margin-right: 24px;
+  }
+}
+
 .TopMenu .loginBtn:hover {
   color: white;
   background-color: rgba(0, 0, 0, 0);
@@ -194,11 +223,94 @@ a {
   font-weight: normal;
 }
 
+.TopMenu .isMenuOn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .MainPage h1 {
+    font-size: 5vw;
+  }
+
+  .MainPage button {
+    padding: 10px 20px 10px 20px;
+    margin-top: 7vh;
+    color: rgb(7, 7, 7);
+    font-size: 5vw;
+    border-radius: 8vw;
+    border: 1.2px solid rgb(7, 7, 7);
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    transition-duration: 200ms;
+  }
+
+  .MainPage h3 {
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-top: 3vw;
+    font-size: 3vw;
+    font-weight: normal;
+  }
+
+  .MainPage h2 {
+    font-size: 12vw;
+    /* font-size: 100px; */
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+  }
+
+  .TopMenu .isMenuOn,
+  .TopMenu .isMenuOff {
+    display: block;
+    width: 100vw;
+    background-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .TopMenu .isMenuOff a {
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+  }
+
+  .TopMenu .isMenuOn button {
+    width: 100%;
+    height: 50px;
+    margin-bottom: -1px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgb(66, 66, 66);
+    font-size: 100%;
+    transition: all 200ms;
+    box-sizing: border-box;
+  }
+  .TopMenu .isMenuOff button {
+    width: 100%;
+    height: 0px;
+    margin-bottom: -1px;
+    border-radius: 8px;
+    font-size: 0px;
+    text-align: center;
+    border: none;
+    color: transparent;
+    transition: all 200ms;
+    box-sizing: border-box;
+  }
+}
+
 .content {
   padding-top: calc(62px + 5vh);
   padding-left: calc(250px + 40px);
   padding-bottom: 100px;
   padding-right: 40px;
+}
+@media screen and (max-width: 768px) {
+  .content {
+    padding-top: calc(62px + 5vh);
+    padding-left: 10px;
+    padding-bottom: 100px;
+    padding-right: 10px;
+  }
 }
 
 .content .title {

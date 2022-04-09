@@ -223,7 +223,8 @@ a {
   font-weight: normal;
 }
 
-.TopMenu .isMenuOn {
+.TopMenu .isMenuOn,
+.TopMenu .isMenuOff {
   display: none;
 }
 
@@ -270,7 +271,6 @@ a {
   .TopMenu .isMenuOff a {
     margin: 0px;
     padding: 0px;
-    background-color: white;
   }
 
   .TopMenu .isMenuOn button {
@@ -279,7 +279,7 @@ a {
     margin-bottom: -1px;
     border-radius: 8px;
     text-align: center;
-    border: 1px solid rgb(66, 66, 66);
+    border: 1px solid rgb(55, 55, 55);
     font-size: 100%;
     transition: all 200ms;
     box-sizing: border-box;
@@ -289,11 +289,12 @@ a {
     height: 0px;
     margin-bottom: -1px;
     border-radius: 8px;
-    font-size: 0px;
+    font-size: 0%;
     text-align: center;
-    border: none;
-    color: transparent;
+    border: 1px transparent;
+    color: 1px solid rgba(55, 55, 55, 255);
     transition: all 200ms;
+    color: rgb(0, 0, 0, 0);
     box-sizing: border-box;
   }
 }

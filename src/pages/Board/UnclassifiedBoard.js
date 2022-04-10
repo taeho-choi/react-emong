@@ -13,6 +13,7 @@ const UnclassifiedBoard = ({
 }) => {
   useEffect(() => {
     setActiveMenu("Unclassified");
+    window.scrollTo(0, 0);
   }, []);
 
   const input = useRef();

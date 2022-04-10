@@ -5,6 +5,7 @@ import PostList from "../PostList.js";
 const SleepyBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("sleepy");
+    window.scrollTo(0, 0);
   }, []);
 
   return (

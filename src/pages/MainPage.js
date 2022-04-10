@@ -15,7 +15,7 @@ const MainPage = ({ activeMenu, setActiveMenu }) => {
           <div>
             <h1>Welcome to EMONG!</h1>
             <p className="line"></p>
-            <h2>😀😁😂🤣😎😍😪</h2>
+            <h2>😀😁😂🤣😍😪</h2>
             <h1>익명의 친구들에게 감정을 공감 받으세요!</h1>
             <Link to="login">
               <button>로그인하고 시작하기</button>

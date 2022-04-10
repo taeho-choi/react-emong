@@ -17,7 +17,7 @@ const SearchPostList = ({ postList, onEdit, searchText }) => {
     }
     setData(tempData);
     setResultValue(tempValue);
-  });
+  }, []);
 
   return (
     <div className="PostList">

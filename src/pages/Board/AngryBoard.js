@@ -5,7 +5,7 @@ import PostList from "../PostList.js";
 const AngryBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("angry");
-    console.log("앵그리 액티브");
+    window.scrollTo(0, 0);
   }, []);
 
   return (

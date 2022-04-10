@@ -5,6 +5,7 @@ import PostList from "../PostList.js";
 const SurpriseBoard = ({ activeMenu, setActiveMenu, postList, onEdit }) => {
   useEffect(() => {
     setActiveMenu("surprise");
+    window.scrollTo(0, 0);
   }, []);
 
   return (

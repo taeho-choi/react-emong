@@ -49,7 +49,9 @@ const LoginPage = () => {
     <div className="LoginPage">
       <div className="box">
         <Link to="/">
-          <div className="logo">🤐 EMONG</div>
+          <div className="logo" style={{ color: "#ffc83d" }}>
+            😎 EMONG
+          </div>
         </Link>
         <input
           placeholder="아이디"

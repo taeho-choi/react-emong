@@ -13,7 +13,12 @@ const MainPage = ({ activeMenu, setActiveMenu }) => {
       <div className="content">
         <div className="MainPage">
           <div>
-            <h1>Welcome to EMONG!</h1>
+            <h1>
+              Welcome to{" "}
+              <a style={{ color: "#ffc83d", fontSize: "min(6vw, 40px)" }}>
+                EMONG!
+              </a>
+            </h1>
             <p className="line"></p>
             <h2>😀😁😂🤣😍😪</h2>
             <h1>익명의 친구들에게 감정을 공감 받으세요!</h1>

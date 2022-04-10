@@ -46,7 +46,9 @@ const TopMenu = ({ isLoggedIn, setIsLoggedIn }) => {
     <div className="TopMenu">
       <div className="NavBar">
         <Link to="/">
-          <div className="logo">🤐 EMONG</div>
+          <div className="logo" style={{ color: "#ffc83d" }}>
+            😎 EMONG
+          </div>
         </Link>
         {!isLoggedIn ? (
           <Link to="login">
@@ -79,7 +81,7 @@ const TopMenu = ({ isLoggedIn, setIsLoggedIn }) => {
         </button>
         <button
           onClick={() => {
-            onClickBoard("unclassified");
+            onClickBoard("");
           }}
         >
           🏁　이용 안내
@@ -149,7 +151,7 @@ const TopMenu = ({ isLoggedIn, setIsLoggedIn }) => {
         </button>
         <button
           onClick={() => {
-            onClickBoard("unclassified");
+            onClickBoard("");
           }}
         >
           📧　문의하기

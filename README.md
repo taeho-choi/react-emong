@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+# react-emong
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+익명으로 오늘의 감정을 공유하고, 이모지를 이용해 유저들에게 공감을 받을 수 있는 모바일/PC 반응형 웹사이트입니다.
 
-## Available Scripts
+- 배포 링크: https://taeho-choi.github.io/react-emong/
+- 개발 환경: <img src="https://img.shields.io/badge/Windows-0078D6?style=flat&logo=Windows&logoColor=white"/> <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=VisualStudioCode&logoColor=white"/>
+- 개발 언어: <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"/>
 
-In the project directory, you can run:
+## Preview
 
-### `npm start`
+![taeho-choi github io_react-emong_unclassified](https://user-images.githubusercontent.com/60216512/162748386-104e0181-4dd2-46dc-a892-0e51018e0c08.png)
+![mobile](https://user-images.githubusercontent.com/60216512/162748377-7c47ecfd-7fa8-4c10-ac7d-33354c6a8729.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Comments
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React를 처음 공부해가며 기획부터 배포까지 혼자 진행하였다. 모바일 기기로 테스트했을 때 브라우저의 하단 툴바가 메뉴를 가리는 등 예상치 못한 문제들이 많았다. 디바이스 별 호환을 구현하는 데에 시간을 많이 투자한 것 같다.
+  <br/>
+- 회원가입과 데이터의 저장을 위해 백엔드가 필요하여 Firebase를 연동하였다.
+  <br/>
+- 검색 결과의 개수를 표시할 때 게시글 배열 State를 순회하는데 이 때 계속 컴포넌트가 리렌더되는 문제가 있었다. 결과의 개수를 State가 아닌 let 변수로 변경하여 해결하였다. 필요한 값을 State로 관리해야 할 때와 그렇지 않을 때를 구분할 수 있어야 한다.

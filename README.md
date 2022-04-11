@@ -8,8 +8,8 @@
 
 ## Preview
 
-![taeho-choi github io_react-emong_unclassified](https://user-images.githubusercontent.com/60216512/162748386-104e0181-4dd2-46dc-a892-0e51018e0c08.png)
-![mobile](https://user-images.githubusercontent.com/60216512/162748377-7c47ecfd-7fa8-4c10-ac7d-33354c6a8729.png)
+![mobile](https://user-images.githubusercontent.com/60216512/162748386-104e0181-4dd2-46dc-a892-0e51018e0c08.png)
+![KakaoTalk_20220411_215205959](https://user-images.githubusercontent.com/60216512/162749184-8706562c-f9f5-4e12-8143-73ef526ac9f7.png)
 
 ## Comments
 

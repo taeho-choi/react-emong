@@ -1,19 +1,48 @@
-# react-emong
+# EMONG (HTML/CSS/JavaScript/React/Firebase)
 
-익명으로 오늘의 감정을 공유하고, 이모지를 이용해 유저들에게 공감을 받을 수 있는 모바일/PC 반응형 웹사이트입니다.
+---
 
-- 배포 링크: https://taeho-choi.github.io/react-emong/
-- 개발 환경: <img src="https://img.shields.io/badge/Windows-0078D6?style=flat&logo=Windows&logoColor=white"/> <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=VisualStudioCode&logoColor=white"/>
-- 개발 언어: <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"/>
+### 프로젝트 소개
 
-## Preview
+- 배포 링크 : [https://taeho-choi.github.io/react-emong/](https://taeho-choi.github.io/react-emong/)
+- 익명으로 오늘의 감정을 공유하고, 이모지를 이용해 유저들에게 공감을 받을 수 있는 모바일/PC 반응형 웹사이트입니다.
+- html5 게임/메타버스를 개발하고 싶어 웹 공부 목적으로 개발하였습니다.
+- HTML, CSS, JavaScript 언어와 React 라이브러리를 사용하여 개발하였습니다.
+- Firebase 서비스를 이용해 회원가입과 로그인, 데이터베이스를 연동하였습니다.
 
-![mobile](https://user-images.githubusercontent.com/60216512/162748386-104e0181-4dd2-46dc-a892-0e51018e0c08.png)
-![KakaoTalk_20220411_215205959](https://user-images.githubusercontent.com/60216512/162749184-8706562c-f9f5-4e12-8143-73ef526ac9f7.png)
+### Desktop Preview
 
-## Comments
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7bc28abb-24c3-416f-a2ff-2df5beb908d8/Untitled.png)
 
-- React를 처음 공부해가며 기획부터 배포까지 혼자 진행하였다. 모바일 기기로 테스트했을 때 브라우저의 하단 툴바가 메뉴를 가리는 등 예상치 못한 문제들이 많았다. 디바이스 별 호환을 구현하는 데에 시간을 많이 투자한 것 같다.
-- 회원가입과 데이터의 저장을 위해 백엔드가 필요하여 Firebase를 연동하였다.
-- 검색 결과의 개수를 표시할 때 게시글 배열 State를 순회하는데 이 때 계속 컴포넌트가 리렌더되는 문제가 있었다. 결과의 개수를 State가 아닌 let 변수로 변경하여 해결하였다. 필요한 값을 State로 관리해야 할 때와 그렇지 않을 때를 구분할 수 있어야 한다.
-- 검색 기능에서 [Warning: Maximum update depth exceeded.] 에러가 발생하였다. useEffect 함수에 dependency array 인자를 주지 않아 그 effect인 setState가 불리면 effect가 다시 불리는 무한루프를 돌고 있었고, dependency array로 검색한 텍스트를 넣어 해당 값이 변화할 때만 effect를 실행하도록 하였다.
+### Mobile Preview
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bbf00c0c-4bbc-4b6d-ad68-92f91be5afce/Untitled.png)
+
+# 맡은 역할
+
+---
+
+- 프로젝트 기획
+- 프론트엔드 개발
+- Firebase 연동
+- 프로젝트 배포
+
+# 구현 내용
+
+---
+
+- HTML, CSS로 웹사이트의 레이아웃을 디자인하였습니다.
+- 모바일 기기에 맞는 레이아웃 전환을 위해 반응형 css를 작성하였습니다.
+- React 라이브러리를 사용하여 페이지를 컴포넌트화 하였습니다.
+- JSX 문법과 useState, useEffect, useRefReact 등의 React Hooks를 사용하여 기능 동작을 구현하였습니다.
+- Firebase 서비스의 Authentication을 사용하여 회원가입, 로그인 기능을 구현하였습니다.
+- Firebase 서비스의 Cloud Firestore를 사용하여 게시글을 데이터베이스와 연동하였습니다.
+- release 브랜치를 생성하여 Github Pages를 통해 웹사이트를 배포하였습니다.
+
+# 코멘트
+
+---
+
+- 모바일 기기로 테스트했을 때 브라우저의 하단 툴바가 메뉴를 가리는 등 예상치 못한 문제들이 많았습니다. 디바이스 별 호환을 구현하는 데에 시간을 많이 투자하였습니다.
+- 검색 결과의 개수를 표시할 때 게시글 배열 State를 순회하는데 이 때 계속 컴포넌트가 리렌더되는 문제가 있었습니다. 결과의 개수를 State가 아닌 let 변수로 변경하여 해결하였습니다. State로 관리해야 할 때와 그렇지 않을 때를 구분할 수 있어야 한다는 것을 느꼈습니다.
+- 검색 기능에서 [Warning: Maximum update depth exceeded.] 에러를 해결하는 데에 시간을 많이 사용하였는데, useEffect 함수의 dependency array 인자의 적절히 주지 않아서 발생한 문제였습니다. dependency array로 검색한 문자열을 주어 검색한 값이 바뀔 때만 effect를 실행하도록 하여 해결하였습니다.
